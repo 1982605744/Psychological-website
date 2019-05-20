@@ -1,0 +1,313 @@
+@charset "utf-8";
+body{
+	overflow-x:hidden;
+	min-width:1200px;
+	font:14px/1.5 Microsoft Yahei,sans-serif;
+	background-color: #f2f2f2;
+}
+*{margin:0;padding:0;}
+a{color:#000;text-decoration: none;}
+ul,li{list-style:none;}
+input,button,select,textarea{
+	outline:none;
+}
+textarea{resize:none}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+img{
+	border:0;
+	vertical-align: top;
+}
+.w-m{
+	width: 1200px;
+	margin:0 auto;
+}
+/*登录注册弹窗*/
+.nav-sign{
+	position:fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+	display:none;
+	z-index: 100;
+}
+.sign-content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 445px;
+	height: 300px;
+}
+
+.sign-center-close{
+	width:50px;
+	height:30px;
+	border-radius:0 0 3px 3px;
+	position: absolute;
+	top: 10px;
+	right: 0;
+	font-size: 30px;
+	color: #333;
+	cursor: pointer;
+	text-align:center;
+	line-height: 30px;
+}
+.sign-center-close:hover{
+	background-color: #ff2311;
+}
+.login-req,.reg-req{
+	display:none;
+}
+/*头部样式*/
+#header{
+	width:100%;
+	min-width: 1400px;
+}
+.header-nav{
+	width:100%;
+	height:60px;
+	position:relative;
+	background-color: #09f;
+}
+.header-nav .logo{
+	width: 340px;
+	height: 40px;
+	display:flex;
+	position:absolute;
+	left:40px;
+	top:10px;
+}
+.header-nav .logo .logo-img{
+	display:block;
+	width:40px;
+	height:40px;
+	background:url("../images/head/czxy.jpg") no-repeat 0 0/40px 40px;
+}
+.header-nav h2{
+	width:260px;
+	height:40px;
+	color:#fff;
+	font-weight: 700;
+	font-size:25px;
+	text-align: center;
+	line-height: 40px;
+}
+.header-nav .hnav-list{
+	width:100%;
+	padding-left:380px;
+	padding-right:425px;
+	box-sizing: border-box;
+}
+.header-nav .hnav-item{
+	margin:0 auto;
+	max-width: 900px;
+	height: 60px;
+	display:flex;
+	justify-content: space-between;
+}
+.hi-selected{
+	background-color: #40b3ff;
+}
+.header-nav .hnav-item li{
+	width: 15%;
+	height: 60px;
+	line-height:30px;
+	text-align: center;
+	position:relative;
+	min-width: 80px;
+}
+.header-nav .hnav-item li:hover>.list{
+	display:block;
+}
+.header-nav .hnav-item>li .list{
+	display:none;
+	width:100%;
+	height:auto;
+	position:absolute;
+	left:0;
+	top:60px;
+	background-color: #0099ff;
+	z-index:1;
+}
+.header-nav .hnav-item>li .list>li{
+	width:100%;
+	height:40px;
+	line-height: 40px;
+}
+.header-nav .hnav-item>li .list>li:hover{
+	background-color: #6cf;
+}
+.header-nav .hnav-item>li .list>li>a{
+	display:block;
+	width:100%;
+	height: 100%;
+	color:#fff;
+}
+.header-nav .hnav-item>li>a{
+	display: block;
+	height:44px;
+	padding-top:16px;
+	color:#fff;
+	font-size:16px;
+}
+.header-nav .search{
+	width: 240px;
+	height:30px;
+	display:flex;
+	position:absolute;
+	right:180px;
+	top:15px;
+}
+.header-nav .search .search-con{
+	width: 200px;
+	height: 30px;
+	position:relative;
+}
+.header-nav .search .search-con input{
+	width: 200px;
+	height: 30px;
+	background-color: #fff;
+	border-radius:20px 0 0 20px;
+	font-size: 14px;
+	color:#333;
+	border:0;
+	outline:none;
+	text-indent:12px;/* 光标文本左移 */
+}
+.header-nav .search .search-con .convenient-hidden{
+	display: none;
+	z-index:5;/* 提升层级，以防banner区的定位遮盖 */
+	position: absolute;
+	top:30px;
+	left: 12px;
+	width: 188px;
+	height: 300px;
+	background-color: #fff;
+}
+.header-nav .search .search-con .convenient-hidden h4{
+	height: 35px;
+	padding-left: 10px;
+	line-height: 35px;
+	font-size: 12px;
+	font-weight: normal;
+	color: #666;
+
+}
+.header-nav .search .search-con .convenient-hidden a{
+	display: block;
+	height: 30px;
+	padding-left: 10px;
+	line-height: 30px;
+	color:#0099FF;
+	font-size: 14px;
+}
+.header-nav .search .search-con .convenient-hidden i{
+	display: inline-block;
+	width: 24px;
+	height: 18px;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 18px;/* 文字上下居中 */
+	background-color: #ddd;
+	color:#fff;
+	font-style: normal;
+	border-radius:0 15px 15px 0;
+}
+.header-nav .search .search-con .convenient-hidden .no1{
+	background-color: #0099FF;
+}
+.header-nav .search .search-con .convenient-hidden .no2{
+	background-color: #00bbFF;
+}
+.header-nav .search .search-con .convenient-hidden .no3{
+	background-color: #00ccFF;
+}
+.header-nav .search .search-con input:focus + .convenient-hidden{
+	display: block;
+}
+.header-nav .search .search-con input:hover{
+	background-color: #eee;
+}
+.search-submit{
+	float: left;
+	width: 40px;
+	height: 30px;
+	background-color: #fff;
+	border-radius:0 20px 20px 0;
+}
+.search-submit a{
+	display: block;
+	height: 20px;
+	padding-top: 5px;
+	padding-left: 5px;
+	color: #00ccFF;
+	font-size: 14px;
+}
+.search-submit i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url("../../images/head/sousuo-no.png") no-repeat;
+}
+.search-submit i:hover{
+	background: url("../../images/head/sousuo.png") no-repeat;
+}
+.user-info{
+	width: 160px;
+	height: 30px;
+	line-height:30px;
+	font-size:18px;
+	display:flex;
+	justify-content: space-between;
+	position:absolute;
+	right:0;
+	top:15px;
+}
+.user-info span{
+	display:block;
+	color:#fff;
+	font-size:14px;
+}
+.user-info .hello{
+	width:70px;
+}
+.user-info a{
+	display:block;
+	font-size:16px;
+	cursor:pointer;
+}
+.user-info #user-login{
+	width:90px;
+	color:#ccc;
+}
+.user-info .usercenter{
+	text-align: center;
+}
+.user-info #user-login:hover{
+	color:#fff;
+}
+.user-info .welcome{
+	width:42px;
+}
+
+/*尾部样式*/
+#foot{
+	margin-top: 50px;
+	background-color: #666;
+}
+#foot .foot-con{
+	height: 54px;
+	color: #ccc;
+	text-align: center;
+	line-height: 54px;
+}
+
+

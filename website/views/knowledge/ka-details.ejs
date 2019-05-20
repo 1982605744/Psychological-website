@@ -1,0 +1,167 @@
+<!--引入头部-->
+<%- include("../part/header",{title:"长治学院学生心理健康",css:["detail"]}) %>
+<!--主体内容-->
+<div id="content">
+    <div class="box w-m">
+        <div class="bread w-m">
+            <a href="/knowledge">知识</a>
+            <span>> 心理文章</span>
+            <h4><%= articleData.title %></h4>
+        </div>
+        <div class="detail-con">
+            <div class="left">
+                <div class="jokes-con">
+                    <div class="title-detail">
+                        <div class="joke-title">
+                            <h2><%= articleData.title %></h2>
+                            <p><a href=""><%= articleData.author.username %></a></p>
+                        </div>
+                        <div class="joke-btn art-btn">
+                            <div class="btn btn-pre"><a href=""><span>上一篇</span></a></div>
+                            <div class="btn"><a href=""><span>下一篇</span></a></div>
+                        </div>
+                    </div>
+                    <div class="jokescon"><%- articleData.content %></div>
+                </div>
+                <div id="comment" style="padding-top: 20px;">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item layui-form-text">
+                            <div class="layui-input-block" style="margin-left: 0;">
+                                <textarea name="desc" placeholder="踩个脚印鸭~" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block" style="margin-left: 30px;">
+                                <button class="layui-btn" lay-submit lay-filter="comment">评论</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="comment-con">
+                    <h3>评论</h3>
+                    <ul>
+                        <% commentData.forEach(function(v){ %>
+                            <li>
+                            <div class="user user2">
+                                <div class="user-photo"><a href="/talk/tp-space"><img src="" alt=""></a></div>
+                                <div class="user-info2">
+                                    <h5><a href="/talk/tp-space"><%= v.author.username %></a></h5>
+                                    <a href="/talk/tp-space">网络1902班辅导员</a>
+                                </div>
+                                <div class="layui-btn delcomment delete">删除</div>
+                            </div>
+                            <p><%= v.content %></p>
+                            <div class="comment-info">
+                                <p>2021-12-22 20:20</p>
+                                <div class="operation">
+                                    <div class="operate-btn good-sbtn"><a href=""><i></i><span>120</span></a></div>
+                                    <div class="operate-btn comment-sbtn"><a href=""><i></i><span>300</span></a></div>
+                                </div>
+                            </div>
+                            </li>
+                        <%})%>
+                    </ul>
+                    <!-- <div class="more-com"><a href="">更多评论(3)</a></div> -->
+                </div>
+            </div>
+            <div class="right">
+                <div class="recommand">
+                    <div class="rec-title">
+                        <h4>图片推荐</h4>
+                        <p><a href="">换一换</a></p>
+                    </div>
+                    <div class="testlisit">
+                        <div class="img2"><a href="/fun/fun-images/fi-details"><img
+                                        src="http://xljk.ahut.edu.cn/_mediafile/xljk/2011/05/11/5fkt5f6lc2.gif" alt=""></a>
+                        </div>
+                        <div class="test-info22">
+                            <h4><a href="/fun/fun-images/fi-details">顺时针还是逆时针？</a></h4>
+                            <p><a href="/talk/tp-space">王筱菲</a></p>
+                            <div class="infotest2">
+                                <p><span>211</span>赞</p>
+                                <p><span>5</span>收藏</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testlisit">
+                        <div class="img2"><a href="/fun/fun-images/fi-details"><img
+                                        src="http://xljk.ahut.edu.cn/__local/9/24/F5/3375AD3E1C22A896E0592BCED1D_3E9A3B63_6E15.jpg?e=.jpg"
+                                        alt=""></a></div>
+                        <div class="test-info22">
+                            <h4><a href="/fun/fun-images/fi-details">会动的点</a></h4>
+                            <p><a href="/talk/tp-space">林夕</a></p>
+                            <div class="infotest2">
+                                <p><span>211</span>赞</p>
+                                <p><span>5</span>收藏</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testlisit">
+                        <div class="img2"><a href="/fun/fun-images/fi-details"><img
+                                        src="http://xljk.ahut.edu.cn/__local/6/9E/FD/B6CC3776441BF728CAB78D33223_CFDF444F_320C.jpg?e=.jpg"
+                                        alt=""></a></div>
+                        <div class="test-info22">
+                            <h4><a href="/fun/fun-images/fi-details">你认为A和B所在方格颜色相同吗？</a></h4>
+                            <p><a href="/talk/tp-space">王筱菲</a></p>
+                            <div class="infotest2">
+                                <p><span>211</span>赞</p>
+                                <p><span>5</span>收藏</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testlisit">
+                        <div class="img2"><a href="/fun/fun-images/fi-details"><img
+                                        src="http://xl.xidian.edu.cn/__local/6/77/BA/625C0A1A526724D3BA741DC26CA_27032FEA_15CA7.jpg?e=.jpg"
+                                        alt=""></a></div>
+                        <div class="test-info22">
+                            <h4><a href="/fun/fun-images/fi-details">不可能图形</a></h4>
+                            <p><a href="/talk/tp-space">王筱菲</a></p>
+                            <div class="infotest2">
+                                <p><span>211</span>赞</p>
+                                <p><span>5</span>收藏</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-more"><a href="/fun/fun-images">查看全部</a></div>
+                </div>
+            </div>
+            <script>
+                var articleId = location.href.match(/[\da-z]+$/ig)[0]
+                // console.log(articleId);
+                //Demo
+                layui.use('form', function () {
+                    var form = layui.form;
+                    //监听提交
+                    form.on('submit(comment)', function (data) {
+                        // console.log(location.href);		测试得到文章id
+                        var postData = {
+                            desc: data.field.desc
+                            , articleId
+                        }
+                        // console.log(postData);
+                        $.ajax({
+                            method: "POST"
+                            , url: "/comment"
+                            , data: postData
+                            , success: function (data) {
+                                if (data.code === 1) {
+                                    layer.alert(data.msg, function () {
+                                        location.reload()
+                                    });
+                                } else {
+                                    layer.alert(data.msg, function () {
+                                        layer.close(layer.index);
+                                    });
+                                }
+                            }
+                        })
+                        return false;
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+<!--引入尾部-->
+<%- include("../part/foot",{js:[]}) %>

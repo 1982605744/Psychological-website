@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+.space-con .space-top{
+	width: 1200px;
+	height: 292px;
+}
+.space-top .bg{
+	height: 198px;
+	/* background: url(""); */
+	background-color: #999;
+	color: #fff;
+}
+.bg h2{
+	/* margin-top: 20px; */
+	padding-top: 20px;
+	margin-left: 30px;
+}
+.bg p{
+	margin-left: 30px;
+	margin-top: 10px;
+}
+.bg .photo{
+	width: 170px;
+	height: 170px;
+	margin-top: 24px;
+	margin-left: 30px;
+	border-radius: 50%;
+	border: 1px solid red;
+	background-color: #fff;
+}
+.bg .age{
+	width: 50px;
+	height: 22px;
+	margin-top: -11px;
+	margin-left: 90px;
+	border-radius: 5px;
+	background-color: #9cf;
+	text-align: center;
+}
+.photo .teacher{
+	width: 300px;
+	height: 30px;
+	margin-left: 185px;
+}
+.teacher p{
+	display: inline;
+	margin-top: 4px;
+	margin-left: 0;
+	height: 24px;
+}
+.teacher h3{
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 30px;
+}
+.teacher i{
+	width: 18px;
+	height: 18px;
+	background: url("../images/content/small/nv.png");
+	margin-top: 6px;
+}
+.degree{
+	width: 170px;
+	margin-top: 10px;
+	margin-left: 185px;
+}
+.degree span{
+	color: #fff;
+}
+.space-con .space-top .bg .photo .service-info{
+	display: flex;
+	margin-left: 155px;
+}
+#service-info h2{
+	color: red;
+	width: 70px;
+}
+#service-info p{
+	color: #999;
+}
+.service-operation{
+	display: flex;
+}
+.service-operation .operation-user{
+	display: flex;
+	margin-left: 258px;
+	margin-top: 24px;
+}
+#operation-user{
+	border: 1px solid #09f;
+	border-radius: 20px;
+	width: 92px;
+	height: 60px;
+	text-align: center;
+	/* line-height: 60px; */
+	color: #09f;
+	font-size: 16px;
+	margin-left: 20px;
+}
+#operation-user p{
+	margin-left: 0;
+	margin-top: 0;
+	padding-top: 5px;
+}

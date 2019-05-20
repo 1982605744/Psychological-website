@@ -1,0 +1,283 @@
+<!--引入头部-->
+<%- include("part/header",{title:"长治学院学生心理健康",css:[]})%>
+<!--用户中心内容-->
+<%if(_id){%>
+    <%#用户已登录%>
+    <div id="usercenter-content">
+        <!-- 导航条 -->
+        <ul class="layui-nav layui-bg-cyan" lay-filter="">
+            <li class="layui-nav-item layui-this"><a href="javascript:;">个人中心</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">我的关注</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">我的收藏</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">系统设置</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="javascript:;">移动模块</a></dd>
+                    <dd><a href="javascript:;">后台模版</a></dd>
+                    <dd><a href="javascript:;">电商平台</a></dd>
+                </dl>
+            </li>
+            <li class="user">Hi~<span style="font-weight: bolder"><%=username%></span>
+        </ul>
+        <!-- 管理栏目 -->
+        <div class="layui-tab layui-tab-brief layui-bg-gray">
+            <ul class="layui-tab-title">
+                <li class="layui-this">个人信息</li>
+                <li>修改密码</li>
+                <li>发表文章</li>
+                <li>管理文章</li>
+                <li>5</li>
+            </ul>
+            <div class="layui-tab-content">
+                <!--个人信息-->
+                <div class="layui-tab-item layui-show">
+                    <form class="layui-form">
+                        <table class="layui-table info">
+                            <colgroup>
+                                <col width="20%">
+                                <col width="60%">
+                                <col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>栏目</th>
+                                    <th>信息</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="info-form">
+                                <!--ID-->
+                                <tr>
+                                    <td id="info-idName"></td>
+                                    <td class="info-content" id="info-id"></td>
+                                    <td>无</td>
+                                </tr>
+                                <!--姓名-->
+                                <tr>
+                                    <td>姓名</td>
+                                    <td class="info-content"><%=username%></td>
+                                    <td>无</td>
+                                </tr>
+                                <!--性别-->
+                                <tr>
+                                    <td>性别</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.sex || "未选择"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-block">
+                                                    <input type="radio" name="sex" value="男" title="男">
+                                                    <input type="radio" name="sex" value="女" title="女">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                                <!--年龄-->
+                                <tr>
+                                    <td>年龄</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.age || "未填写"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="age" lay-verify="age" placeholder="请输入年龄" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                                <!--系别-->
+                                <tr>
+                                    <td>系别</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.department || "未填写"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="department" lay-verify="department" placeholder="请输入系别" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                                <!--班级-->
+                                <tr>
+                                    <td>班级</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.class || "未填写"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="class" lay-verify="class" placeholder="请输入班级" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                                <!--手机号-->
+                                <tr>
+                                    <td>手机号</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.tel || "未填写"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="tel" lay-verify="tel" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                                <!--邮箱-->
+                                <tr>
+                                    <td>邮箱</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.email || "未填写"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="email" lay-verify="email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                                <!--个性签名-->
+                                <tr>
+                                    <td>个性签名</td>
+                                    <td class="info-content">
+                                        <div class="show"><%=userInfo.status || "静若处子，动若疯兔"%></div>
+                                        <div class="hide" style="display: none;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="status" lay-verify="status" placeholder="请输入个性签名" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="layui-btn update">修改</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="layui-btn save-btn" lay-submit lay-filter="update" style="display:none">保存修改</button>
+                    </form>
+                </div>
+                <!--修改密码-->
+                <div class="layui-tab-item">
+                    <form class="layui-form" action="">
+                        <!--原密码-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:100px">请输入原密码：</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="oldpassword" required lay-verify="oldpassword" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!--新密码-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:100px">请输入新密码：</label>
+                            <div class="layui-input-inline">
+                                <input id="newpassword" type="password" name="newpassword" required lay-verify="newpassword" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">6-18位字符</div>
+                        </div>
+                        <!--确认密码-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:100px">请确认密码：</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="password3" required lay-verify="password3" placeholder="再次输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!--保存修改-->
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="change">保存修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--发表文章-->
+                <div class="layui-tab-item">
+                    <form class="layui-form" action="">
+                        <!--文章标题-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:100px">标题</label>
+                            <div class="layui-input-inline">
+                                <input id="article-title" type="text" name="title" required placeholder="请输入文章标题" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!--分类-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:100px">分类</label>
+                            <div class="tags" id="tags" style="margin:16px 130px;">
+                                <input type="text" name="" id="inputTags" placeholder="回车生成标签" autocomplete="off">
+                            </div>
+                        </div>
+                        <!--文章内容-->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:100px">文章内容</label>
+                            <div class="layui-input-block"  style="margin-left: 130px;background-color: #fefefe;">
+                                <textarea id="article" style="display: none;"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!--发表文章-->
+                        <div class="layui-form-item">
+                            <div class="layui-input-block" style="margin-left: 130px;">
+                                <button class="layui-btn" lay-submit lay-filter="article" style="width:1048px;height:54px;font-size:16px;">发表文章</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- 管理文章 -->
+                <div class="layui-tab-item">
+                    <div class="layui-input-inline">
+                        <input type="text" name="search" required placeholder="请输入 标题/分类/内容 关键词" autocomplete="off" class="layui-input" id="search-input" style="width:250px;">
+                    </div>
+                    <div class="layui-btn" id="search-btn">搜索</div>
+                    <table class="layui-table" id="article-table">
+                        <colgroup>
+                            <col width="250">
+                            <col width="100">
+                            <col width="100">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>发表时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="layui-tab-item">内容5</div>
+            </div>
+        </div>
+    </div>
+    <%if(identity==="学生"){%>
+        <script>
+            $("#info-idName").text("学号");
+            $("#info-id").text("<%=studentID%>");
+        </script>
+    <%}else if(identity==="管理员"){%>
+        <script>
+            $("#info-idName").text("账号");
+            $("#info-id").text("<%=accountID%>");
+        </script>
+    <%}else{%>
+        <script>
+            $("#info-idName").text("工号");
+            $("#info-id").text("<%=jobID%>");
+        </script>
+    <%}%>
+<%}%>
+<!--引入尾部-->
+<%- include("part/foot",{js:["usercenter"]})%>

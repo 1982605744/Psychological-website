@@ -1,0 +1,86 @@
+.banner {
+    width: 100%;
+    height: 490px;
+    /* 最外层盒子高度 */
+}
+
+#wrap {
+    position: relative;
+    width: 1200px;
+    height: 490px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#wrap .pict {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 500%;
+}
+
+.pict>li {
+    float: left;
+    width: 1200px;
+    height: 490px;
+    background-color: #ccc;
+    text-align: center;
+    font-size: 30px;
+    line-height: 490px;
+}
+
+.tab {
+    position: absolute;
+    bottom: 40px;
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.tab li {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: #fff;
+    border-radius: 50%;
+    margin: 5px 10px 0 0;
+    opacity: .35;
+    cursor: pointer;
+}
+
+.tab li.on {
+    position: absolute;
+    top: 0;
+    background: #09f;
+    opacity: 1;
+    z-index: 99;
+}
+
+#wrap>div {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 30px;
+    height: 60px;
+    background: rgba(0, 0, 0, .2);
+    text-align: center;
+    font-size: 18px;
+    line-height: 60px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#wrap>div:hover {
+    background: rgba(0, 0, 0, .5);
+}
+
+.prev {
+    border-radius: 0 10px 10px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+}

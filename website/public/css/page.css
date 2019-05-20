@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+.page-con li{
+	width: 390px;
+	height: 362px;
+	background-color: #fff;
+	border-radius: 20px;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+li#a{
+	margin-left: 0;
+}
+li.top{
+	margin-top: 0;
+}
+.page-con ul{
+	display: flex;
+}
+.page-con li .cartoonpage-img{
+	width: 390px;
+	height: 220px;
+	background-color: #999;
+	border-radius: 20px 20px 0 0;
+}
+.page-con li .cartoonpage-img a{
+	display: block;
+	width: 390px;
+	height: 220px;
+}
+.page-con li p.cartoonpage-info{
+	width: 350px;
+	height: 72px;
+	font-size: 16px;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.page-con li .cartoonpage-operate{
+	display: flex;
+	width: 370px;
+	height: 30px;
+	margin-top: 6px;
+}
+.page-con li .cartoonpage-operate p{
+	margin-left: 20px;
+	margin-top: 10px;
+	color: #999;
+}
+.page-con li .cartoonpage-operate p span{
+	color:red;
+}
+.page-con li .cartoonpage-operate i{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url("../images/content/small/shoucang.png");
+	
+}

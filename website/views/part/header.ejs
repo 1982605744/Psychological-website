@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="师博潇">
+    <meta name="Keywords" content="心理健康，大学生，长治学院，免费，资讯，心理咨询，心理倾诉，问答，心理课程，心理文章，心理书籍，心理测评，心理FM，心理音乐，心理图片，心理短片，治愈系，漫画，笑话，心理乐园，树洞，小确幸，微笑墙，社交，交友"><!--关键字：可提升排名 除了广告费-->
+    <meta name="Description" content="长治学院学生心理健康网站czxySPH.COM官方的综合心理健康服务平台，资讯、交流、测评、知识、娱乐全面服务">
+    <title><%=title%></title><!--标题-->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <%css.forEach(v=>{%>
+        <link rel="stylesheet" href="/css/<%=v%>.css">
+    <%})%>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/layui/layui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="header-nav">
+            <div class="logo">
+                <a href="/" class="logo-img"></a>
+                <h2>长治学院学生心理健康</h2>
+            </div>
+            <div class="hnav-list">
+                <ul class="hnav-item">
+                    <li class="hi-selected">
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/talk">交流</a>
+                        <ul class="list">
+                            <li><a href="/talk/talk-consultation">心理咨询</a></li>
+                            <li><a href="/talk/talk-pourout">心理倾诉</a></li>
+                            <li><a href="/talk/talk-QA">心理问答</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/test">测评</a>
+                    </li>
+                    <li>
+                        <a href="/knowledge">知识</a>
+                        <ul class="list">
+                            <li><a href="/knowledge/knowledge-classes">心理课程</a></li>
+                            <li><a href="/knowledge/knowledge-articles">心理文章</a></li>
+                            <li><a href="/knowledge/knowledge-books">心理书籍</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/fun">娱乐</a>
+                        <ul class="list">
+                            <li><a href="/fun/fun-FM">心理FM</a></li>
+                            <li><a href="/fun/fun-music">心里音乐</a></li>
+                            <li><a href="/fun/fun-shortFilms">心理短片</a></li>
+                            <li><a href="/fun/fun-images">心里图片</a></li>
+                            <li><a href="/fun/fun-jokes">笑话</a></li>
+                            <li><a href="/fun/fun-cartoons">漫画</a></li>
+                            <li><a href="/fun/fun-healing">治愈系</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/play">乐园</a>
+                        <ul class="list">
+                            <li><a href="/play/play-treehole">树洞</a></li>
+                            <li><a href="/play/play-fortunate">小确幸</a></li>
+                            <li><a href="/play/play-smilewall">微笑墙</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="search clearfix">
+                <div class="search-con">
+                    <input type="text" placeholder="搜索你想要的鸭">
+                    <div class="convenient-hidden">
+                        <h4>热门搜索</h4>
+                        <ul>
+                            <li><a href=""><i class="no1">1</i><span>大学生心理健康</span></a></li>
+                            <li><a href=""><i class="no2">2</i><span>大学生心理健康</span></a></li>
+                            <li><a href=""><i class="no3">3</i><span>大学生心理健康</span></a></li>
+                            <li><a href=""><i>4</i><span>大学生心理健康</span></a></li>
+                            <li><a href=""><i>5</i><span>大学生心理健康</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-submit">
+                    <a href="#">
+                        <i></i>
+                    </a>
+                </div>
+            </div>
+            <div class="user-info">
+                <span class="hello">您好，请</span>
+                <a href="javascript:;" id="user-login">登录</a>
+            </div>
+        </div>
+        <!--登录注册窗-->
+        <div id = "nav-signup" class="nav-sign">
+            <div class="sign-content">
+                <div class="layui-tab layui-bg-gray layui-tab-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">登录</li>
+                        <li>注册</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <!--登录-->
+                        <div class="layui-tab-item layui-show">
+                            <form class="layui-form" action="">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">身份：</label>
+                                    <div class="layui-input-inline">
+                                        <select name="identity" lay-verify="identity" lay-filter="log-identity">
+                                            <option value="">请选择身份</option>
+                                            <option value="学生">学生</option>
+                                            <option value="咨询师">咨询师</option>
+                                            <option value="倾诉师">倾诉师</option>
+                                            <option value="管理员">管理员</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="login-req">
+                                    <div class="layui-form-item user-logID">
+                                        <label class="layui-form-label"></label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="" required  lay-verify="logID" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">密码：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="password" name="password" required lay-verify="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="login">登录</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--注册-->
+                        <div class="layui-tab-item">
+                            <form class="layui-form" action="">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">身份：</label>
+                                    <div class="layui-input-inline">
+                                        <select name="identity" lay-verify="identity" lay-filter="reg-identity">
+                                            <option value="">请选择身份</option>
+                                            <option value="学生">学生</option>
+                                            <option value="咨询师">咨询师</option>
+                                            <option value="倾诉师">倾诉师</option>
+                                            <option value="管理员">管理员</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="reg-req">
+                                    <div class="layui-form-item user-regID">
+                                        <label class="layui-form-label"></label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="" required  lay-verify="regID" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                        <div class="layui-form-mid layui-word-aux">8位数字哦~</div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">姓名：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="username" required  lay-verify="username" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                                        </div>
+                                        <div class="layui-form-mid layui-word-aux">2-4位汉字</div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">密码：</label>
+                                        <div class="layui-input-inline">
+                                            <input id="reg-password" type="password" name="password" required lay-verify="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                        </div>
+                                        <div class="layui-form-mid layui-word-aux">6-18位字符</div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">确认密码：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="password" name="password2" required lay-verify="password2" placeholder="再次输入密码" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="reg">注册</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-center-close">×</div>
+            </div>
+        </div>
+    </div>
+    <%if( _id ){%>
+        <script>
+            $(".user-info").html("<span class=\"welcome\">欢迎！</span><a href=\"/usercenter\" class=\"usercenter\"><%=username%></a><a href=\"/logout\" class=\"logout\">退出登录</a>");
+        </script>
+    <%}%>
+
+
+
